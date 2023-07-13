@@ -20,6 +20,26 @@ add(newNode){
     }
     node.next = newNode;
 }
+to_array() {
+    let current = this.Head;
+    let arr = [];
+    while (current) {
+        arr.push(current.data);
+        current = current.next;
+    }
+    return arr;
+}
+ displayList(){
+    let node = this.Head;
+    var str = ""
+    while (node) {
+        str += node.data + "->";
+        node = node.next;
+    }
+    str += "NULL"
+    console.log(str);
+  }
+}
 
 // let l1 = [2,4,3]
 // let l2 = [5,6,4]
@@ -27,6 +47,3 @@ add(newNode){
 // const addTwoNumbers = (l1, l2) => {
 
 // }
-
-
-// addTwoNumbers(l1, l2)
