@@ -11,24 +11,20 @@
 // Input: strs = ["a"]
 // Output: [["a"]]
 
-let strings = ["eat", "tea", "tan", "ate", "nat", "bat"];
+let strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
-const groupAnagrams = function (strings) {
-  const hash = {};
-  for (let i = 0; i < strings.length; i++) {
-    // console.log(strings[i]);
-    let currWord = strings[i].split(",")
+const groupAnagrams = function (strs) {
+  let sorted = strs.split("").sort().join("");
+  let hash = {};
 
-    for (let j = 0; j < currWord.length; j++) {
-      let currChar = currWord[j];
-      if (hash[currChar]){
-        hash[currChar] += 1;
-      } else {
-        hash[currChar] = 1;
-      }
-      console.log(hash);
+  for (let i = 0; i < sorted.length; i++) {
+    if (!hash[sorted[i]]) {
+      hash[sorted[i]] = [sorted[i]];
+    } else {
+      hash[sorted[i]].push(sorted[i]);
     }
   }
+  return Object.values(hash);
 };
 
-groupAnagrams(strings);
+groupAnagrams(strs);
