@@ -16,18 +16,6 @@ const topKFrequent = (nums, k) => {
   }
   // console.log(hash)
 
-  // let arr = []
-  // for (let key in hash) {
-  //   let count = hash[key]
-  //   // console.log(count)
-  //   // console.log(key)
-  //   if (count >= k) {
-  //     arr.push(key)
-  //   }
-  // }
-  // console.log(arr)
-  // return arr
-
   let sortedArr = [...Object.keys(hash)]
     .sort((a, b) => hash[b] - hash[a])
     .slice(0, k);
