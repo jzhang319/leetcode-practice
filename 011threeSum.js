@@ -10,13 +10,16 @@ var threeSum = function (nums) {
   let ans = [];
 
   for (let i = 0; i < nums.length - 2; i++) {
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
-
     let j = i + 1;
     let k = nums.length - 1;
+
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+
     // console.log(sorted[i], sorted[i + 1], sorted[i + 2]);
+
     while (j < k) {
       let sum = nums[i] + nums[j] + nums[k];
+      
       if (sum === 0) {
         ans.push([nums[i], nums[j], nums[k]]);
         // stopping duplicates
