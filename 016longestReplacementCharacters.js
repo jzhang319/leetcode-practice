@@ -14,7 +14,7 @@ var characterReplacement = function (s, k) {
 
     // temp length = windowEnd - windowStart + 1
 
-    if (windowEnd - windowStart + 1 - mostCommon) {
+    if (windowEnd - windowStart + 1 - mostCommon > k) {
       // condition where the window is no longer valid
       hash[s[windowStart]]--;
       windowStart++;
