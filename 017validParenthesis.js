@@ -5,16 +5,27 @@ var isValid = function (s) {
   if (s.length === 0) {
     return false;
   }
-  // split the string
-  let splitArr = s.split("");
 
-  // check if each set of parenthesis is followed by a paired parenthesis
-  for (let i = 0; i < splitArr.length - 1; i++) {
-    let curr = splitArr[i];
-    console.log(curr);
-    // if (splitArr[i] = '(')
+  const stack = [];
+  const parens = "()[]{}";
+  let i = 0;
+
+  while (i < s.length) {
+    stack.push(s[i]);
+    i++;
+
+    let open = stack[stack.length - 2];
+    let closed = stack[stack.length - 1];
+
+    let potParens = open + closed;
+
+    if (parens.includes(potParens)) {
+      stack.pop();
+      stack.pop();
+    }
   }
-  return false
+
+  return stack.length === 0;
 };
 
 console.log(isValid(s));
