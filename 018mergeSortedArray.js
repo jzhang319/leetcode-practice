@@ -5,13 +5,25 @@ let n = 3;
 // Output: [1, 2, 2, 3, 5, 6];
 
 var merge = function (nums1, m, nums2, n) {
-  let ans = [];
-  let sliced1 = nums1.slice(0, m);
-  let sliced2 = nums2.slice(0, n);
-  console.log(sliced1, sliced2);
-  ans = sliced1.concat(sliced2).sort();
+  let first = m - 1;
+  let second = n - 1;
+  let i = nums1.length - 1;
 
-  return ans;
+  while (second >= 0) {
+    let fVal = nums1[first];
+    let sVal = nums2[second];
+
+    if (fVal >= sVal) {
+      nums1[i] = fVal;
+      i--;
+      first--;
+    } else {
+      nums1[i] = sVal;
+      i--;
+      second--;
+    }
+  }
+  return nums1;
 };
 
 console.log(merge(nums1, m, nums2, n));
