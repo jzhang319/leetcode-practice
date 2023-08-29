@@ -14,5 +14,9 @@ let n = 2
 // 3. 2 steps + 1 step
 
 var climbStairs = function(n) {
-
+  for (let i = 1; i <= n; i++) {
+    console.log(i);
+    let current = n[i]
+    
+  }
 };
