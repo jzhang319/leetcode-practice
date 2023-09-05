@@ -1,0 +1,3 @@
+var repeatedSubstringPattern = function(s) {
+
+};
