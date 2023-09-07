@@ -13,4 +13,6 @@
 // Output: true
 // Explanation: It is the substring "abc" four times or the substring "abcabc" twice.
 
-var repeatedSubstringPattern = function (s) {};
+var repeatedSubstringPattern = function (s) {
+  
+};
