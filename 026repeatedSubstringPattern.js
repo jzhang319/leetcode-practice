@@ -1,11 +1,11 @@
 // Example 1:
 
-// let s = "abab"
+let s = "abab";
 // Output: true
 // Explanation: It is the substring "ab" twice.
 // Example 2:
 
-let s = "aba"
+// let s = "aba"
 // Output: false
 // Example 3:
 
@@ -14,16 +14,18 @@ let s = "aba"
 // Explanation: It is the substring "abc" four times or the substring "abcabc" twice.
 
 var repeatedSubstringPattern = function (s) {
-  if (s.length === 0) return false;
-  
-  let prefix = s[0];
-  for (let i = 1; i < s.length; i++) {
-    while (s[i].indexOf(prefix)!== 0) {
-      prefix = prefix.slice(0, -1)
+  let n = s.length;
+
+  for (let i = 0; i <= n / 2; i++) {
+    if (n % i == 0) {
+      let pattern = "";
+      for (let j = 0; j < n / i; j++) {
+        pattern += s.substring(0, i);
+      }
+      if (pattern == s) return true;
     }
   }
-  return true;
+  return false;
 };
 
-
-console.log(repeatedSubstringPattern(s))
+console.log(repeatedSubstringPattern(s));
