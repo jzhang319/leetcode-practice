@@ -12,27 +12,25 @@ let list1 = [1, 2, 4],
 // Output: [0]
 
 var mergeTwoLists = function (list1, list2) {
-  if (!list1) return list2;
-  if (!list2) return list1;
-  let result = [];
-  let i = 0,
-    j = 0;
-  while (i < list1.length || j < list2.length) {
-    if (i === list1.length) {
-      result.push(list2[j]);
-      j++;
-    } else if (j === list2.length) {
-      result.push(list1[i]);
-      i++;
-    } else if (list1[i] < list2[j]) {
-      result.push(list1[i]);
-      i++;
+  let dummy = new ListNode(0);
+  let head = dummy;
+
+  while (list1 && list2) {
+    if (list1.val <= list2.val) {
+      dummy.next = list1;
+      list1 = list1.next;
     } else {
-      result.push(list2[j]);
-      j++;
+      dummy.next = list2;
+      list2 = list2.next;
     }
+    dummy = dummy.next;
   }
-  return result;
+  if (list1 !== null) {
+    dummy.next = list1;
+  } else {
+    dummy.next = list2;
+  }
+  return head.next;
 };
 
-console.log(mergeTwoLists(list1, list2));
+(mergeTwoLists(list1, list2));
