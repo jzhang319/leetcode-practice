@@ -1,6 +1,6 @@
 // Example 1:
 
-// Input: n = 2
+let n = 2
 // Output: [0,1,1]
 // Explanation:
 // 0 --> 0
@@ -19,5 +19,14 @@
 // 5 --> 101
 
 var countBits = function(n) {
+  let bits = []
 
+  for (let i = 0; i <= n; i++) {
+    // console.log(i.toString(2))
+    bits.push(i.toString(2).split('1').length - 1)
+  }
+  return bits
 };
+
+
+console.log(countBits(n))
