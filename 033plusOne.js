@@ -1,6 +1,6 @@
 // Example 1:
 
-let digits = [1,2,3]
+let digits = [1, 2, 3];
 // Output: [1,2,4]
 // Explanation: The array represents the integer 123.
 // Incrementing by one gives 123 + 1 = 124.
@@ -20,6 +20,13 @@ let digits = [1,2,3]
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
 
-var plusOne = function(digits) {
-
+var plusOne = function (digits) {
+  let combined = digits.join("");
+  let number = Number(combined);
+  number++;
+  // console.log(typeof combined);
+  // console.log(combined);
+  return number.toString().split("");
 };
+
+console.log(plusOne(digits));
