@@ -1,6 +1,6 @@
 // Example 1:
 
-let x = 4
+// let x = 4
 // Output: 2
 // Explanation: The square root of 4 is 2, so we return 2.
 // Example 2:
@@ -11,5 +11,18 @@ let x = 4
 
 
 var mySqrt = function(x) {
-
+  
 };
+
+// const x = 2
+// let y = 4
+// function update(arg){
+//   console.log(Math.random() + y * arg);
+//   return Math.random() + y * arg
+// }
+
+// y = 2
+// y+=1
+// const result = update(x)
+
+// console.log(result, ' <--- result')
