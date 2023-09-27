@@ -10,15 +10,11 @@ Input: x = 101
 // Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
 
 var mySqrt = function (x) {
-  if (x === 0) return 0;
-  if (x === 1) return 1;
-  for (let i = 2,j = 2; i <= x, j <= x; i++, j++) {
+ if (x <= 1) return x;
+  for (let i = 2; i <= x; i++) {
     // console.log(i)
-
-    // console.log(i * j === x);
-    if (i * j === x) return i;
-    if (i * j > x) return i - 1
-  }
+    if (i * i === x) return i;
+    if (i * i > x) return i - 1
 };
 
 console.log(mySqrt(x));
