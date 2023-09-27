@@ -15,13 +15,10 @@ var addBinary = function (a, b) {
     sum = parseInt(a, 2) + parseInt(b, 2);
     return sum.toString(2);
   } else {
-
+    sum = BigInt('0b'+a) + BigInt('0b'+b);
+    return sum.toString(2);
   }
 };
 
-console.log(calculateBinary("11011+1000")); //=>100011
-console.log(calculateBinary("1000-0100")); //=>100
-console.log(calculateBinary("1000/0100")); //=>10
-console.log(calculateBinary("10*10")); //=>100
 
 console.log(addBinary(a, b));
