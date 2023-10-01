@@ -21,6 +21,9 @@ var inorderTraversal = function (root) {
   // 3. call traverse function
   // 4. return result array
 
+  // time complexity: O(n)
+  // space complexity: O(n)
+
   let result = [];
   const traverse = (node) => {
     if (node === null) return;
