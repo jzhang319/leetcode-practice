@@ -36,18 +36,26 @@ var romanToInt = function (s) {
     // console.log(curr);
     if (curr == "I" && next == "V") {
       sum += 4;
-    } else {
-      sum +=1
-    }
-    if (curr == "I" && next == "X") {
+      console.log(sum, " <-- line 39");
+      i++;
+    } else if (curr == "I" && next == "X") {
       sum += 9;
-    } else {
+      console.log(sum, " <-- line 40");
+      i++;
+    } else if (curr == "I") {
       sum += 1;
-    } if (curr == "V") {
-      sum += 5;
+      console.log(sum, " <-- line 45");
     }
-    if (curr == "X") {
-      sum += 10;
+    if (curr == "V") {
+      sum += 5;
+      console.log(sum, " <-- line 49");
+    }
+    if (curr == "X" && next == "L") {
+      sum += 40;
+      i++;
+    } else if (curr == "X" && next == "C") {
+      sum += 90;
+      i++;
     }
     if (curr == "L") {
       sum += 50;
