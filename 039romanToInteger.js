@@ -23,13 +23,35 @@ Input: s = "LVIII";
 // D             500
 // M             1000
 
+// I can be placed before V (5) and X (10) to make 4 and 9.
+// X can be placed before L (50) and C (100) to make 40 and 90.
+// C can be placed before D (500) and M (1000) to make 400 and 900.
+
 var romanToInt = function (s) {
   let sum = 0;
   for (let i = 0; i < s.length; i++) {
     let curr = s[i];
-    console.log(s[i]);
+    console.log(curr);
     if (curr == "I") {
       sum += 1;
+    }
+    if (curr == "V") {
+      sum += 5;
+    }
+    if (curr == "X") {
+      sum += 10;
+    }
+    if (curr == "L") {
+      sum += 50;
+    }
+    if (curr == "C") {
+      sum += 100;
+    }
+    if (curr == "D") {
+      sum += 500;
+    }
+    if (curr == "M") {
+      sum += 1000;
     }
   }
   return sum;
