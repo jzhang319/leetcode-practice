@@ -1,18 +1,19 @@
 // Example 1:
-
 // let s = "III"
 // Output: 3
 // Explanation: III = 3.
-// Example 2:
 
-Input: s = "LVIII";
+// Example 2:
+// let s = "LVIII";
 // Output: 58
 // Explanation: L = 50, V= 5, III = 3.
-// Example 3:
 
-// Input: s = "MCMXCIV"
+// Example 3:
+// let s = "MCMXCIV"
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+let s = "XIV";
 
 // Symbol       Value
 // I             1
@@ -30,12 +31,19 @@ Input: s = "LVIII";
 var romanToInt = function (s) {
   let sum = 0;
   for (let i = 0; i < s.length; i++) {
-    let curr = s[i];
-    console.log(curr);
-    if (curr == "I") {
-      sum += 1;
+    let curr = s[i],
+      next = s[i + 1];
+    // console.log(curr);
+    if (curr == "I" && next == "V") {
+      sum += 4;
+    } else {
+      sum +=1
     }
-    if (curr == "V") {
+    if (curr == "I" && next == "X") {
+      sum += 9;
+    } else {
+      sum += 1;
+    } if (curr == "V") {
       sum += 5;
     }
     if (curr == "X") {
