@@ -9,11 +9,11 @@
 // Explanation: L = 50, V= 5, III = 3.
 
 // Example 3:
-// let s = "MCMXCIV"
+let s = "MCMXCIV";
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
-let s = "XIV";
+// let s = "XIV";
 
 // Symbol       Value
 // I             1
@@ -52,22 +52,39 @@ var romanToInt = function (s) {
     }
     if (curr == "X" && next == "L") {
       sum += 40;
+      console.log(sum, " <-- line 55");
       i++;
     } else if (curr == "X" && next == "C") {
       sum += 90;
+      console.log(sum, " <-- line 59");
       i++;
+    } else if (curr == "X") {
+      sum += 10;
+      console.log(sum, " <-- line 63");
     }
     if (curr == "L") {
       sum += 50;
+      console.log(sum, " <-- line 67");
     }
-    if (curr == "C") {
+    if (curr == "C" && next == "D") {
+      sum += 400;
+      console.log(sum, " <-- line 71");
+      i++
+    } else if (curr == "C" && next == "M") {
+      sum += 900;
+      console.log(sum, " <-- line 75");
+      i++
+    } else if (curr == "C") {
       sum += 100;
+      console.log(sum, " <-- line 79");
     }
     if (curr == "D") {
       sum += 500;
+      console.log(sum, " <-- line 83");
     }
     if (curr == "M") {
       sum += 1000;
+      console.log(sum, " <-- line 87");
     }
   }
   return sum;
