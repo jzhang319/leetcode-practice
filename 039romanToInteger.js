@@ -28,6 +28,21 @@ let s = "MCMXCIV";
 // X can be placed before L (50) and C (100) to make 40 and 90.
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 
+// improve performance
+var romanToInt = function (s) {
+  const map = {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000}
+  let sum = 0;
+  s.split('').forEach((num, i)=>{
+    if(map[num] < map[s[i + 1]]){
+      sum -= map[num];
+    } else {
+      sum += map[num];
+    }
+  })
+  return sum;
+}
+
+// first try
 var romanToInt = function (s) {
   let sum = 0;
   for (let i = 0; i < s.length; i++) {
