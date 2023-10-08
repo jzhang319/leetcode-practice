@@ -12,10 +12,21 @@
 // There is no root-to-leaf path with sum = 5.
 
 // Example 3:
-// Input: root = [], targetSum = 0
+// let root = [], targetSum = 0
 // Output: false
 // Explanation: Since the tree is empty, there are no root-to-leaf paths.
 
 var hasPathSum = function(root, targetSum) {
 
+  function recurse(root, currSum) {
+    if (root === null) return false;
+    currSum += root.val;
+    if (!root.left && !root.right){
+      return currSum === targetSum;
+    }
+    return recurse(root.left, currSum) || recurse(root.right, currSum);
+  }
+  return recurse(root, 0);
 };
+
+console.log(hasPathSum(root, targetSum))
