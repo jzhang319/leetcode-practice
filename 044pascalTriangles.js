@@ -8,19 +8,24 @@ let numRows = 5;
 // Output: [[1]]
 
 var generate = function (numRows) {
-  let pascalsTriangle = new Array(numRows);
-  for (let i = 0; i < numRows; i++) {
-    let row = new Array(i + 1);
-    row[0] = 1;
-    row[row.length - 1] = 1;
+  if(numRows < 1) return [];
+  if(numRows === 1) return [[1]];
+  const triangle = [[1]]
 
-    for (let j = 1; j < row.length; j++) {
-      let rowAbove = pascalsTriangle[i - 1];
-      row[j] = rowAbove[j - 1] + rowAbove[j];
+  for (let i = 1; i < numRows; i++) {
+    let prevRow = triangle[i - 1];
+    const curRow = []
+
+    curRow.push(1)
+
+    for (let j = prevRow.length; j++){
+      curRow[j] = prevRow[j] + prevRow[j - 1]
     }
-    pascalsTriangle[i] = row;
+    curRow.push(1)
+
+    triangle.push(curRow);
   }
-  return pascalsTriangle;
+  return triangle;
 };
 
 
