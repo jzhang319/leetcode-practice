@@ -23,4 +23,5 @@ var generate = function (numRows) {
   return pascalsTriangle;
 };
 
+
 console.log(generate(numRows));
