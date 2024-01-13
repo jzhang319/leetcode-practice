@@ -17,5 +17,13 @@ Explanation: Strings "cc", "acd", "ac", and "d" are consistent.
 */
 
 var countConsistentStrings = function (allowed, words) {
-  
+    let unique = new Set(allowed);
+    let count = 0;
+    for (let word of words) {
+      char = word.split("");
+      if (char.every((c) => unique.has(c))) {
+        count++;
+      }
+    }
+    return count;
 };
