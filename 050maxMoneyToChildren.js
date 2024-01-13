@@ -1,11 +1,14 @@
-// You have to distribute the money according to the following rules:
+/*
+You have to distribute the money according to the following rules:
 
-// All money must be distributed.
-// Everyone must receive at least 1 dollar.
-// Nobody receives 4 dollars.
-// Return the maximum number of children who may receive exactly 8 dollars if you distribute the money according to the aforementioned rules. If there is no way to distribute the money, return -1.
+All money must be distributed.
+Everyone must receive at least 1 dollar.
+Nobody receives 4 dollars.
+Return the maximum number of children who may receive exactly 8 dollars if you distribute the money according to the aforementioned rules. If there is no way to distribute the money, return -1.
+*/
 
-const distMoney = function(money, children) {
+const distMoney = function (money, children) {
+  console.log(`money: ${money}, children: ${children}`);
 
 };
 
@@ -19,3 +22,5 @@ The maximum number of children with 8 dollars will be 1. One of the ways to dist
 - 3 dollars to the third child.
 It can be proven that no distribution exists such that number of children getting 8 dollars is greater than 1.
 */
+
+console.log(distMoney(3, 20))
