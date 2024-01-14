@@ -33,6 +33,39 @@ After the eighth character, the text is "ponter".
 Therefore, we return "ponter".
 */
 
-var finalString = function(s) {
-
+var finalString = function (s) {
+  // if (!s.includes("i")) {
+  //   return s;
+  // }
+  // let ansArr = "";
+  // let sArr = s.split("");
+  // for (let i = 0; i < sArr.length; i++) {
+  //   if (sArr[i] === "i" && sArr[i + 1] === "i") {
+  //     sArr.splice(i, 2);
+  //     i--; // adjust i due to the change in array length
+  //     ansArr = sArr.join(""); // join the array back into a string
+  //   }
+  //   if (sArr[i] === "i") {
+  //     let part1 = sArr.slice(0, i);
+  //     let part2 = sArr.splice(i + 1, sArr.length - 1);
+  //     let temp = part1.reverse().join("") + part2.join("");
+  //     ansArr = temp; // assign temp to ansArr
+  //   }
+  // }
+  // return ansArr;
+  let sArr = s.split("");
+  let i = 0;
+  while (i < sArr.length) {
+    if (sArr[i] === "i" && sArr[i + 1] === "i") {
+      sArr.splice(i, 2);
+      continue; // skip the rest of the loop and continue with the next iteration
+    }
+    if (sArr[i] === "i") {
+      let part1 = sArr.slice(0, i).reverse().join("");
+      let part2 = sArr.slice(i + 1).join("");
+      return part1 + part2; // return the result immediately after the first "i"
+    }
+    i++;
+  }
+  return sArr.join(""); // if there's no "i", return the original string
 };
