@@ -25,6 +25,19 @@ Output: 9999
 Explanation: It is better not to apply any change.
 */
 
-var maximum69Number  = function(num) {
+var maximum69Number = function (num) {
+  let numString = num.toString().split("");
+  // console.log(numString, ' <-- num')
+  for (let digit in numString) {
+    // console.log(digit, ' <-- digit')
+    if (numString[digit] === "6") {
+      numString[digit] = "9";
+      break;
+    }
+  }
+  // console.log(numString, ' <-- num string')
+  return Number(numString.join(""));
 
+  // one liner
+  // return +num.toString().replace("6", "9");
 };
