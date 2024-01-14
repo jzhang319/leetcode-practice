@@ -13,7 +13,26 @@ Explanation: First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].
 Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 */
 
-
-var flipAndInvertImage = function(image) {
-
+var flipAndInvertImage = function (image) {
+  // image.map((s) => {
+  //   s = s.reverse();
+  //   // console.log(reversedArr, ' <-- reversedArr')
+  //   for (let i = 0; i < s.length; i++) {
+  //     let char = s[i];
+  //     if (char === 0) {
+  //       s[i] = 1;
+  //     } else {
+  //       s[i] = 0;
+  //     }
+  //   }
+  //   console.log(s);
+  // });
+  // return image;
+  for (item of image) {
+    item = item.reverse();
+    for (num in item) {
+      item[num] = item[num] === 0 ? 1 : 0;
+    }
+  }
+  return image;
 };
