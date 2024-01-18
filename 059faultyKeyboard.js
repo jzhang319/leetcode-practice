@@ -69,3 +69,7 @@ var finalString = function (s) {
   }
   return sArr.join(""); // if there's no "i", return the original string
 };
+/*
+time = O(n)
+space = O(n)
+*/

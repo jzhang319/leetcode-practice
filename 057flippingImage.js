@@ -28,6 +28,8 @@ var flipAndInvertImage = function (image) {
   //   console.log(s);
   // });
   // return image;
+
+  // version 2
   for (item of image) {
     item = item.reverse();
     for (num in item) {
@@ -36,3 +38,7 @@ var flipAndInvertImage = function (image) {
   }
   return image;
 };
+/*
+time = O(n*m) --> cause it's a 2d array
+space = O(1) --> cause we're doing everything in-place
+*/

@@ -41,3 +41,8 @@ var maximum69Number = function (num) {
   // one liner
   // return +num.toString().replace("6", "9");
 };
+
+/*
+time = O(n)
+space = O(n)
+*/
