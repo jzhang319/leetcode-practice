@@ -7,3 +7,8 @@ var minMovesToSeat = function(seats, students) {
   }
   return count;
 };
+
+/*
+time = O(n log n)
+space = O(1)
+*/

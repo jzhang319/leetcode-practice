@@ -1,0 +1,3 @@
+var separateDigits = function(nums) {
+
+};
