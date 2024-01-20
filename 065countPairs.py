@@ -17,6 +17,8 @@
 # Output: 0
 # Explanation: Since no value in nums is repeated, there are no pairs (i,j) that meet all the requirements.
 
+from typing import List
+
 class Solution:
     def countPairs(self, nums: List[int], k: int) -> int:
         output = 0
